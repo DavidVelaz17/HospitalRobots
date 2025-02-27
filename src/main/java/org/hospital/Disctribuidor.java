@@ -1,4 +1,4 @@
-package org.hospital.Model;
+package org.hospital;
 
 public class Disctribuidor {
     private String medicamento;
