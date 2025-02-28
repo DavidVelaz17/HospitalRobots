@@ -2,7 +2,7 @@ package org.hospital;
 
 import java.util.Date;
 
-public class Cirujano {
+public class Cirujano extends Robot{
     private String nombreCirujano;
     private Date fecha;
     public void CirujiaAsistida(){}
