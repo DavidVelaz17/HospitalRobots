@@ -1,21 +1,21 @@
 package org.hospital;
 
-import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import com.formdev.flatlaf.FlatDarculaLaf;
 
 import javax.swing.*;
 
 public class NewAppUI {
     private JPanel NewAppUIPanel;
-    private JComboBox comboBox1;
-    private JButton activarButton;
-    private JButton ejecutarFuncionButton;
-    private JButton desactivarButton;
-    private JButton mostrarSensorButton;
-    private JTextArea textArea1;
+    private JComboBox selectRobot;
+    private JButton btnActivar;
+    private JButton btnEjecutarFuncion;
+    private JButton btnDesactivar;
+    private JButton btnMostrarSensor;
+    private JTextArea textAreaInfoRobot;
 
     public static void main(String[] args) {
         try {
-            UIManager.setLookAndFeel(new FlatMacLightLaf());
+            UIManager.setLookAndFeel(new FlatDarculaLaf());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -5,21 +5,22 @@
     <rowspec value="top:10dlu:noGrow"/>
     <rowspec value="center:p:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:131px:noGrow"/>
+    <rowspec value="top:10dlu:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:10dlu:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:183px:grow"/>
     <rowspec value="top:38dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
-    <colspec value="left:23dlu:noGrow"/>
-    <colspec value="fill:371px:grow"/>
-    <colspec value="left:41dlu:noGrow"/>
+    <colspec value="left:27dlu:noGrow"/>
+    <colspec value="fill:397px:grow"/>
+    <colspec value="left:30dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
     <constraints>
-      <xy x="20" y="20" width="523" height="550"/>
+      <xy x="20" y="20" width="500" height="550"/>
     </constraints>
     <properties>
       <maximumSize width="500" height="550"/>
@@ -41,7 +42,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="1e311" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+          <component id="1e311" class="javax.swing.JComboBox" binding="selectRobot">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms/>
@@ -66,58 +67,13 @@
           </component>
         </children>
       </grid>
-      <grid id="92157" layout-manager="FormLayout">
-        <rowspec value="center:37px:noGrow"/>
-        <rowspec value="top:4dlu:noGrow"/>
-        <rowspec value="top:14dlu:noGrow"/>
-        <rowspec value="center:34px:noGrow"/>
-        <colspec value="left:45dlu:noGrow"/>
-        <colspec value="center:131px:noGrow"/>
-        <colspec value="left:25dlu:noGrow"/>
-        <colspec value="fill:175px:noGrow"/>
-        <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="34670" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <text value="Estado: Inactivo"/>
-            </properties>
-          </component>
-          <component id="1982d" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <text value="Tipo: Robot Cirujano"/>
-            </properties>
-          </component>
-          <component id="2331b" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <text value="Datos del sensor"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <grid id="7ff46" layout-manager="FormLayout">
         <rowspec value="center:d:grow"/>
         <rowspec value="top:5dlu:noGrow"/>
-        <rowspec value="center:35px:noGrow"/>
+        <rowspec value="center:60px:noGrow"/>
         <rowspec value="top:5dlu:noGrow"/>
-        <rowspec value="center:max(d;4px):noGrow"/>
-        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:50px:noGrow"/>
+        <rowspec value="top:40dlu:noGrow"/>
         <rowspec value="center:max(d;4px):noGrow"/>
         <colspec value="fill:max(d;4px):noGrow"/>
         <colspec value="left:17dlu:noGrow"/>
@@ -127,45 +83,59 @@
         <colspec value="fill:127px:noGrow"/>
         <colspec value="fill:137px:noGrow"/>
         <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="f4030" class="javax.swing.JButton" binding="activarButton" default-binding="true">
+          <component id="f4030" class="javax.swing.JButton" binding="btnActivar">
             <constraints>
               <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
+              <background color="-11751600"/>
+              <foreground color="-1"/>
+              <maximumSize width="81" height="40"/>
+              <minimumSize width="81" height="40"/>
+              <preferredSize width="81" height="40"/>
               <text value="Activar"/>
             </properties>
           </component>
-          <component id="bb938" class="javax.swing.JButton" binding="ejecutarFuncionButton" default-binding="true">
+          <component id="bb938" class="javax.swing.JButton" binding="btnEjecutarFuncion">
             <constraints>
               <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
+              <background color="-14575885"/>
+              <foreground color="-1"/>
+              <preferredSize width="143" height="40"/>
               <text value="Ejecutar Funcion"/>
             </properties>
           </component>
-          <component id="4dafd" class="javax.swing.JButton" binding="desactivarButton" default-binding="true">
+          <component id="4dafd" class="javax.swing.JButton" binding="btnDesactivar">
             <constraints>
               <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
+              <background color="-769226"/>
+              <foreground color="-1"/>
+              <preferredSize width="105" height="40"/>
               <text value="Desactivar"/>
             </properties>
           </component>
-          <component id="cb048" class="javax.swing.JButton" binding="mostrarSensorButton" default-binding="true">
+          <component id="cb048" class="javax.swing.JButton" binding="btnMostrarSensor">
             <constraints>
               <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
+              <background color="-26624"/>
+              <foreground color="-1"/>
+              <preferredSize width="136" height="40"/>
               <text value="Mostrar Sensor"/>
             </properties>
           </component>
@@ -173,25 +143,34 @@
       </grid>
       <component id="11713" class="javax.swing.JSeparator">
         <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties/>
       </component>
       <scrollpane id="262fc">
         <constraints>
-          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4603" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+          <component id="4603" class="javax.swing.JTextArea" binding="textAreaInfoRobot">
             <constraints/>
             <properties/>
           </component>
         </children>
       </scrollpane>
+      <component id="27908" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Estado del robot:"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
