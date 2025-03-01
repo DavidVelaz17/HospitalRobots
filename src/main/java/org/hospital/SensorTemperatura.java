@@ -15,9 +15,4 @@ public class SensorTemperatura implements Calibrable{
     public void IniciarCalibracion() {
         System.out.println("Iniciando calibración de sensor de temperatura");
     }
-
-    @Override
-    public void FinalizarCalibracion() {
-        System.out.println("Calibración finalizada");
-    }
 }

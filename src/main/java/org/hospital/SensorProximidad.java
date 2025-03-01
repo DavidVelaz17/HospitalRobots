@@ -14,9 +14,4 @@ public class SensorProximidad implements Calibrable{
     public void IniciarCalibracion() {
         System.out.println("Iniciando calibración de sensor de proximidad");
     }
-
-    @Override
-    public void FinalizarCalibracion() {
-        System.out.println("Calibración finalizada");
-    }
 }

@@ -9,11 +9,9 @@ class BusinessLogicRobotDistribuidor{
     }
     public void ActivarRobotDistribuidor(){
         robotDistribuidor.Activar();
-        System.out.println("Robot distribuidor activado");
     }
     public void DesactivarRobotDistribuidor(){
         robotDistribuidor.Desactivar();
-        System.out.println("Robot distribuidor desactivado");
     }
     public void MostrarSensorProximidad(){
         robotDistribuidor.MostrarSensorProximidad();
@@ -28,15 +26,16 @@ class BusinessLogicRobotDiagnostico{
     }
     public void ActivarRobotDiagnostico(){
         robotDiagnostico.Activar();
-        System.out.println("Robot distribuidor activado");
     }
     public void DesactivarDistribuidor(){
         robotDiagnostico.Desactivar();
-        System.out.println("Robot distribuidor desactivado");
     }
     public void MostrarSensor(){
         robotDiagnostico.MostrarSensorTemperatura();
     }
+}
+class BusinessLogicRobotCirujanoBypassCoronario{
+
 }
 
 public class Main {
