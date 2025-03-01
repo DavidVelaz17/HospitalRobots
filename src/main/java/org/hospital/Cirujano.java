@@ -19,8 +19,15 @@ public class Cirujano extends Robot{
             System.out.println("Niveles óptimos de oxígeno");
         }
     }
-
+//TODO para un cleaner code sería factible mover la lógica a otro método
+//TODO Verificar si no afecta en el diagrma de clases los métodos de lógica
     public boolean Exitoso(){
+        /*
+        TODO utilizar una variable tiempo para
+        verificar que si el paciente ha pasado
+        más de cierto tiempo sin buena oxigenación
+        la operación fué fallida retornando un false
+        */
         return true;
     }
 

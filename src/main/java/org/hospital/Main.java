@@ -35,7 +35,8 @@ class BusinessLogicRobotDiagnostico{
     }
 }
 class BusinessLogicRobotCirujanoBypassCoronario{
-
+    //TODO Realizar upcasting y downcasting
+    //TODO verificar los tipos de sub clases para upcasting y downcasting
 }
 
 public class Main {
