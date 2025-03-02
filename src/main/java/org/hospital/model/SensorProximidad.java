@@ -1,4 +1,4 @@
-package org.hospital;
+package org.hospital.model;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package org.hospital;
+package org.hospital.model;
 
 public class Diagnostico extends Robot{
     private SensorTemperatura sensorTemperatura = new SensorTemperatura();

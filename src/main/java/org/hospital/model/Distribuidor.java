@@ -1,4 +1,4 @@
-package org.hospital;
+package org.hospital.model;
 
 public class Distribuidor extends Robot {
     private SensorProximidad sensorProximidad = new SensorProximidad();

@@ -1,6 +1,10 @@
-package org.hospital;
+package org.hospital.controller;
 
 import com.formdev.flatlaf.FlatDarculaLaf;
+import org.hospital.model.Cirujano;
+import org.hospital.model.Diagnostico;
+import org.hospital.model.Distribuidor;
+import org.hospital.model.Robot;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +21,11 @@ public class NewAppUI {
 
     Diagnostico robotDiagnostico = new Diagnostico();
     Distribuidor robotDistribuidor = new Distribuidor();
+
+    //upcasting
+    Robot robotCirujano = new Cirujano();
+    //Downcasting (de Robot a Cirujano)
+    Cirujano cirujano = (Cirujano) robotCirujano;
 
 
     public NewAppUI() {
@@ -40,7 +49,7 @@ public class NewAppUI {
                         accion = robotDiagnostico.Activar("Robot Diagnóstico");
                         break;
                     case "Robot Cirujano":
-                        accion = "Ejecutando cirugía asistida.";
+                        accion = robotCirujano.Activar("Robot Cirujano");
                         break;
                     case "Robot Distribuidor":
                         accion = robotDistribuidor.Activar("Robot Distribuidor");
@@ -94,7 +103,7 @@ public class NewAppUI {
                         accion = robotDiagnostico.AnalisisClinico();
                         break;
                     case "Robot Cirujano":
-                        accion = "Ejecutando cirugía asistida.";
+                        accion = cirujano.Desactivar("Robot Cirujano");
                         break;
                     case "Robot Distribuidor":
                         accion = robotDistribuidor.EntregarMedicamento();
@@ -128,20 +137,24 @@ public class NewAppUI {
         });
     }
 
-
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(new FlatDarculaLaf());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        JFrame frame = new JFrame("Gestión de Robots Médicos Inteligentes");
-        frame.setContentPane(new NewAppUI().NewAppUIPanel);
-        frame.setSize(500, 550);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setVisible(true);
+    public JPanel UIPanelExport() {
+        return NewAppUIPanel;
     }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            UIManager.setLookAndFeel(new FlatDarculaLaf());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        JFrame frame = new JFrame("Gestión de Robots Médicos Inteligentes");
+//        frame.setContentPane(new NewAppUI().NewAppUIPanel);
+//        frame.setSize(500, 550);
+//        frame.setLocationRelativeTo(null);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setResizable(false);
+//        frame.setVisible(true);
+//    }
 }
