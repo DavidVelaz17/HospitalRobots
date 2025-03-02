@@ -2,15 +2,12 @@ package org.hospital;
 
 public class Robot {
     private int numeroDeSerie;
-    private String estado;
 
-    public void Activar(){}
-    public void Desactivar(){}
-    public void EjecutarFuncion(){}
-    public String MostrarSensor(){
-        return "sensor";
+    public void Activar(){
+        System.out.println("Robot distribuidor activado");
     }
-    public String MostrarEstado(){
-        return estado;
+    public void Desactivar(){
+        System.out.println("Robot distribuidor desactivado");
     }
+
 }
