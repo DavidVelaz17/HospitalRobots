@@ -26,9 +26,12 @@ public class Diagnostico extends Robot{
          }
         return observaciones + "\n" + diagnosticoFinal;
     }
-    public void MostrarSensorTemperatura(){
+
+    public String MostrarSensorTemperatura(){
         sensorTemperatura.IniciarCalibracion();
         sensorTemperatura.FinalizarCalibracion();
-        sensorTemperatura.ReportarTemperatura();
+        var temperatura = sensorTemperatura.ReportarTemperatura();
+        return String.format("Temperatura actual: %s°C", temperatura);
     }
+
 }
