@@ -37,10 +37,14 @@ class BusinessLogicRobotDiagnostico{
 class BusinessLogicRobotCirujanoBypassCoronario{
     //TODO Realizar upcasting y downcasting
     //TODO verificar los tipos de sub clases para upcasting y downcasting
+
+
+
 }
 
 public class Main {
     public static void main(String[] args) {
+        /*
         BusinessLogicRobotDiagnostico robot = new BusinessLogicRobotDiagnostico();
         robot.ActivarRobotDiagnostico();
         robot.MostrarSensor();
@@ -52,6 +56,14 @@ public class Main {
         r2.MostrarSensorProximidad();
         r2.EntregarMedicamento();
         r2.DesactivarRobotDistribuidor();
+        */
+
+        Cirujano.BypassCoronario bypassCoronario = new Cirujano().new BypassCoronario();
+        bypassCoronario.Activar();
+        bypassCoronario.RealizarAnastomosis();
+        bypassCoronario.CirugiaAsistida();
+        bypassCoronario.Desactivar();
+
 
     }
 }

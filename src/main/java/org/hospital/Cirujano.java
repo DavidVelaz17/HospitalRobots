@@ -6,29 +6,28 @@ public class Cirujano extends Robot{
     private SensorOxigeno sensorOxigeno=new SensorOxigeno();
     private String nombreCirujano;
     private Date fecha;
+
     public void CirugiaAsistida(){
         int oxigeno= sensorOxigeno.ReportarOxigenacion();
         fecha = new Date();
+        String mensajeOxigenación=
+                oxigeno<=92 ?
+                        "Niveles de oxígeno muy bajos, aumentar los niveles de oxigenación":
+                oxigeno<95 ?
+                        "Niveles de oxígeno bajos, aumentar los niveles de oxigenación":
+                        "Niveles óptimos de oxígeno";
         System.out.println("Inicia cirugía asistida\nDoctor(a) asignado(a) "+
                 CirujanoAsignado()+"\nFecha: "+fecha);
-        if(oxigeno>=90 && oxigeno<=92){
-            System.out.println("Niveles de oxígeno muy bajos, aumentar los niveles de oxigenación");
-        } else if (oxigeno>92 && oxigeno<95) {
-            System.out.println("Niveles de oxígeno bajos, aumentar los niveles de oxigenación");
-        }else{
-            System.out.println("Niveles óptimos de oxígeno");
-        }
+        System.out.println(mensajeOxigenación);
+        System.out.println(Exitoso()?"Operación Exitosa":"Operación Fallida");
+
     }
-//TODO para un cleaner code sería factible mover la lógica a otro método
-//TODO Verificar si no afecta en el diagrma de clases los métodos de lógica
     public boolean Exitoso(){
-        /*
-        TODO utilizar una variable tiempo para
-        verificar que si el paciente ha pasado
-        más de cierto tiempo sin buena oxigenación
-        la operación fué fallida retornando un false
-        */
-        return true;
+        int tiempo;
+        Random tiempoRandom = new Random();
+        tiempo = tiempoRandom.nextInt(5);
+        if(tiempo<3) return true;
+        else return false;
     }
 
     public String CirujanoAsignado(){
@@ -44,20 +43,35 @@ public class Cirujano extends Robot{
     class BypassCoronario extends Cirujano{
         private int numeroBypass;
         public boolean RealizarAnastomosis(){
-            System.out.println("Robot asistente de cirugía realiza anastomosis");
+            numeroBypass=new Random().nextInt(10);
+            System.out.println("Robot asistente de bypass coronario: "+numeroBypass
+                    +"\nInicia anastomosis");
             return true;
         }
     }
 
     class ReparacionDeValvulaMitral extends Cirujano{
         private float anchuraDeValvulaMitral;
-        public void ReparacionDeValvulaMitral(){}
-        public void ReparacionDeEstenosis(){}
+        public void ReparacionDeValvulaMitral(){
+            anchuraDeValvulaMitral=new Random().nextFloat(2F);
+            System.out.println("Robot asistente de reparación " +
+                    "de valvula mitral inicia reparación de valvula mitral");
+        }
+        public void ReparacionDeEstenosis(){
+            System.out.println("Robot asistente de reparación" +
+                    " de valvula mitral inicia reparación de estenosis");
+        }
     }
 
     class Tumorectomia extends Cirujano{
         private String tipo;
         private float tamaño;
-        public void ExtraccionDeCancer(){}
+        public void ExtraccionDeCancer(){
+            List<String> tipos= Arrays.asList("cerebral","tejido blando","cáncer de mama","óseo","piel");
+            tamaño=new Random().nextFloat(2F);
+            tipo=tipos.get(new Random().nextInt(tipos.size()));
+            System.out.println("Robot asistende de tumorectomia" +
+                    "inicia extracción de cancer de "+tipo+" de tamaño "+tamaño);
+        }
     }
 }
