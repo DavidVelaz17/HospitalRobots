@@ -5,7 +5,7 @@ public class Diagnostico extends Robot{
     private String observaciones;
     private String diagnosticoFinal;
 
-    public void AnalisisClinico(){
+    public String AnalisisClinico(){
         float temperatura=sensorTemperatura.ReportarTemperatura();
         System.out.println(temperatura);
         if (temperatura>=36.1F && temperatura<=37.2F){
@@ -24,7 +24,7 @@ public class Diagnostico extends Robot{
             observaciones="El paciente presenta hipotermina, se requiere atención médica inmediata";
             diagnosticoFinal="Hipotermina";
          }
-        System.out.println(observaciones + "\n" + diagnosticoFinal);
+        return observaciones + "\n" + diagnosticoFinal;
     }
     public void MostrarSensorTemperatura(){
         sensorTemperatura.IniciarCalibracion();
