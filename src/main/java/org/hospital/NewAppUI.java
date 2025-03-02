@@ -20,16 +20,15 @@ public class NewAppUI {
 
 
     public NewAppUI() {
-        // Agregar opciones al JComboBox
+        // Deshabilitar los botones al inicio
+        btnEjecutarFuncion.setEnabled(false);
+        btnMostrarSensor.setEnabled(false);
+        btnDesactivar.setEnabled(false);
+
         selectRobot.addItem("Robot Diagnóstico");
         selectRobot.addItem("Robot Cirujano");
         selectRobot.addItem("Robot Distribuidor");
 
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
         btnActivar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,14 +47,42 @@ public class NewAppUI {
                         break;
                 }
                 textAreaInfoRobot.append(accion + "\n");
+
+                // Habilitar botones de función y desactivar el de activar
+                btnEjecutarFuncion.setEnabled(true);
+                btnMostrarSensor.setEnabled(true);
+                btnDesactivar.setEnabled(true);
+                btnActivar.setEnabled(false);
             }
         });
 
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
+        btnDesactivar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String robot = (String) selectRobot.getSelectedItem();
+                String accion = "";
+
+                switch (robot) {
+                    case "Robot Diagnóstico":
+                        accion = robotDiagnostico.Desactivar("Robot Diagnóstico");
+                        break;
+                    case "Robot Cirujano":
+                        accion = "Robot Cirujano desactivado.";
+                        break;
+                    case "Robot Distribuidor":
+                        accion = robotDistribuidor.Desactivar("Robot Distribuidor");
+                        break;
+                }
+                textAreaInfoRobot.append(accion + "\n");
+
+                // Deshabilitar botones de función y habilitar el de activar
+                btnEjecutarFuncion.setEnabled(false);
+                btnMostrarSensor.setEnabled(false);
+                btnDesactivar.setEnabled(false);
+                btnActivar.setEnabled(true);
+            }
+        });
+
         btnEjecutarFuncion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -78,37 +105,6 @@ public class NewAppUI {
             }
         });
 
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        btnDesactivar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String robot = (String) selectRobot.getSelectedItem();
-                String accion = "";
-
-                switch (robot) {
-                    case "Robot Diagnóstico":
-                        accion = robotDiagnostico.Desactivar("Robot Diagnóstico");
-                        break;
-                    case "Robot Cirujano":
-                        accion = "Desactivar";
-                        break;
-                    case "Robot Distribuidor":
-                        accion = "Desactivar";
-                        break;
-                }
-                textAreaInfoRobot.append(accion + "\n");
-            }
-        });
-
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
         btnMostrarSensor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -117,13 +113,13 @@ public class NewAppUI {
 
                 switch (robot) {
                     case "Robot Diagnóstico":
-                        sensorInfo = "Temperatura: 36.5°C";
+                        sensorInfo = robotDiagnostico.MostrarSensorTemperatura();
                         break;
                     case "Robot Cirujano":
                         sensorInfo = "Bisturí láser calibrado.";
                         break;
                     case "Robot Distribuidor":
-                        sensorInfo = "Inventario de medicamentos: Completo.";
+                        sensorInfo = robotDistribuidor.MostrarSensorProximidad();
                         break;
                 }
 
@@ -131,6 +127,7 @@ public class NewAppUI {
             }
         });
     }
+
 
     public static void main(String[] args) {
         try {
