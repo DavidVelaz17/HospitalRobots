@@ -15,6 +15,10 @@ public class NewAppUI {
     private JButton btnMostrarSensor;
     private JTextArea textAreaInfoRobot;
 
+    Diagnostico robotDiagnostico = new Diagnostico();
+    Distribuidor robotDistribuidor = new Distribuidor();
+
+
     public NewAppUI() {
         // Agregar opciones al JComboBox
         selectRobot.addItem("Robot Diagnóstico");
@@ -30,7 +34,20 @@ public class NewAppUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String robot = (String) selectRobot.getSelectedItem();
-                textAreaInfoRobot.append(robot + " activado.\n");
+                String accion = "";
+
+                switch (robot) {
+                    case "Robot Diagnóstico":
+                        accion = robotDiagnostico.Activar("Robot Diagnóstico");
+                        break;
+                    case "Robot Cirujano":
+                        accion = "Ejecutando cirugía asistida.";
+                        break;
+                    case "Robot Distribuidor":
+                        accion = robotDistribuidor.Activar("Robot Distribuidor");
+                        break;
+                }
+                textAreaInfoRobot.append(accion + "\n");
             }
         });
 
@@ -47,13 +64,13 @@ public class NewAppUI {
 
                 switch (robot) {
                     case "Robot Diagnóstico":
-                        accion = "Realizando análisis clínico y medición de temperatura.";
+                        accion = robotDiagnostico.AnalisisClinico();
                         break;
                     case "Robot Cirujano":
                         accion = "Ejecutando cirugía asistida.";
                         break;
                     case "Robot Distribuidor":
-                        accion = "Entregando medicamentos.";
+                        accion = robotDistribuidor.EntregarMedicamento();
                         break;
                 }
 
@@ -70,7 +87,20 @@ public class NewAppUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String robot = (String) selectRobot.getSelectedItem();
-                textAreaInfoRobot.append(robot + " desactivado.\n");
+                String accion = "";
+
+                switch (robot) {
+                    case "Robot Diagnóstico":
+                        accion = robotDiagnostico.Desactivar("Robot Diagnóstico");
+                        break;
+                    case "Robot Cirujano":
+                        accion = "Desactivar";
+                        break;
+                    case "Robot Distribuidor":
+                        accion = "Desactivar";
+                        break;
+                }
+                textAreaInfoRobot.append(accion + "\n");
             }
         });
 

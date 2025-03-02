@@ -1,18 +1,18 @@
 package org.hospital;
 
-public class SensorProximidad implements Calibrable{
+import java.util.Random;
+
+public class SensorProximidad implements Calibrable {
     private int posicion;
-    public Integer ReportarPosicion(){
+
+    public Integer ReportarPosicion() {
+        Random posicionRandom = new Random();
+        posicion = posicionRandom.nextInt(100);
         return posicion;
     }
 
     @Override
-    public void IniciarCalibracion() {
-
-    }
-
-    @Override
-    public void FinalizarCalibracion() {
-
+    public String IniciarCalibracion() {
+        return "Iniciando calibración de sensor de proximidad";
     }
 }

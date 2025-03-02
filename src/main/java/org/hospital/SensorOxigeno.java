@@ -1,18 +1,18 @@
 package org.hospital;
 
-public class SensorOxigeno implements Calibrable{
+import java.util.Random;
+
+public class SensorOxigeno implements Calibrable {
     private int oxigenacion;
-    public int ReportarOxigenacion(){
+
+    public int ReportarOxigenacion() {
+        Random oxigenoRandom = new Random();
+        oxigenacion = 90 + oxigenoRandom.nextInt() * (100 - 90);
         return oxigenacion;
     }
 
     @Override
-    public void IniciarCalibracion() {
-
-    }
-
-    @Override
-    public void FinalizarCalibracion() {
-
+    public String IniciarCalibracion() {
+        return "Iniciando calibración de sensor de oxigeno";
     }
 }

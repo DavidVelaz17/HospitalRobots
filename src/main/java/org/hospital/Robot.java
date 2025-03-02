@@ -2,15 +2,21 @@ package org.hospital;
 
 public class Robot {
     private int numeroDeSerie;
-    private String estado;
 
-    public void Activar(){}
-    public void Desactivar(){}
-    public void EjecutarFuncion(){}
-    public String MostrarSensor(){
-        return "sensor";
+
+    public String Activar(String robot) {
+        return robot + ": Activado" + numeroDeSerie;
     }
-    public String MostrarEstado(){
-        return estado;
+
+    public String Desactivar(String robot) {
+        return robot + ": Desactivado" + numeroDeSerie;
+    }
+
+    public void setNumeroDeSerie(int numeroDeSerie) {
+        this.numeroDeSerie = numeroDeSerie;
+    }
+
+    public int getNumeroDeSerie() {
+        return numeroDeSerie;
     }
 }
