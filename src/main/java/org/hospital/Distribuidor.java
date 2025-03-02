@@ -7,9 +7,8 @@ public class Distribuidor extends Robot {
     public String EntregarMedicamento() {
         int posicion = sensorProximidad.ReportarPosicion();
         if (posicion == 10) {
-            return "Entregado: " + Entregado();
+            return Entregado() + "";
         } else {
-
             return "Entrega fallida";
         }
     }
@@ -20,10 +19,10 @@ public class Distribuidor extends Robot {
         return true;
     }
 
-    public void MostrarSensorProximidad() {
+    public String MostrarSensorProximidad() {
         sensorProximidad.IniciarCalibracion();
         sensorProximidad.FinalizarCalibracion();
-        System.out.println(sensorProximidad.ReportarPosicion());
+        return (sensorProximidad.ReportarPosicion()).toString();
     }
 
 }

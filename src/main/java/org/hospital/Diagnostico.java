@@ -24,12 +24,14 @@ public class Diagnostico extends Robot{
             observaciones="El paciente presenta hipotermina, se requiere atención médica inmediata";
             diagnosticoFinal="Hipotermina";
          }
-        //System.out.println(observaciones + "\n" + diagnosticoFinal);
         return observaciones + "\n" + diagnosticoFinal;
     }
-    public void MostrarSensorTemperatura(){
+
+    public String MostrarSensorTemperatura(){
         sensorTemperatura.IniciarCalibracion();
         sensorTemperatura.FinalizarCalibracion();
-        sensorTemperatura.ReportarTemperatura();
+        var temperatura = sensorTemperatura.ReportarTemperatura();
+        return String.format("Temperatura actual: %s°C", temperatura);
     }
+
 }
