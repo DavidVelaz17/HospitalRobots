@@ -5,11 +5,11 @@ public class Robot {
 
 
     public String Activar(String robot) {
-        return robot + ": Activado";
+        return robot + ": Activado" + numeroDeSerie;
     }
 
     public String Desactivar(String robot) {
-        return robot + ": Desactivado";
+        return robot + ": Desactivado" + numeroDeSerie;
     }
 
     public void setNumeroDeSerie(int numeroDeSerie) {
