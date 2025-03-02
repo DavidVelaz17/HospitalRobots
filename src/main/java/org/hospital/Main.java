@@ -5,15 +5,19 @@ class BusinessLogicRobotDistribuidor{
     Distribuidor robotDistribuidor = new Distribuidor();
 
     public void EntregarMedicamento(){
+        System.out.println(robotDistribuidor.EntregarMedicamento());
         robotDistribuidor.EntregarMedicamento();
     }
     public void ActivarRobotDistribuidor(){
-        robotDistribuidor.Activar();
+        System.out.println(robotDistribuidor.Activar("Distribuidor"));
+        robotDistribuidor.Activar("Distribuidor");
     }
     public void DesactivarRobotDistribuidor(){
-        robotDistribuidor.Desactivar();
+        System.out.println(robotDistribuidor.Desactivar("Distribuidor"));
+        robotDistribuidor.Desactivar("Distribuidor");
     }
     public void MostrarSensorProximidad(){
+        System.out.println("Proximidad: "+robotDistribuidor.MostrarSensorProximidad()+" cm");
         robotDistribuidor.MostrarSensorProximidad();
     }
 }
@@ -25,10 +29,10 @@ class BusinessLogicRobotDiagnostico{
         robotDiagnostico.AnalisisClinico();
     }
     public void ActivarRobotDiagnostico(){
-        robotDiagnostico.Activar();
+        robotDiagnostico.Activar("Diagnostico");
     }
     public void DesactivarDistribuidor(){
-        robotDiagnostico.Desactivar();
+        robotDiagnostico.Desactivar("Distribuidor");
     }
     public void MostrarSensor(){
         robotDiagnostico.MostrarSensorTemperatura();

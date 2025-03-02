@@ -3,11 +3,12 @@ package org.hospital;
 public class Robot {
     private int numeroDeSerie;
 
-    public void Activar(){
-        System.out.println("Robot distribuidor activado");
+    public String Activar(String robot) {
+        return robot + ": Activado";
     }
-    public void Desactivar(){
-        System.out.println("Robot distribuidor desactivado");
+
+    public String Desactivar(String robot) {
+        return robot + ": Desactivado";
     }
 
 }
