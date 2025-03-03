@@ -7,7 +7,7 @@ public class SensorProximidad implements Calibrable {
 
     public Integer ReportarPosicion() {
         Random posicionRandom = new Random();
-        posicion = posicionRandom.nextInt(100);
+        posicion = posicionRandom.nextInt(50);
         return posicion;
     }
 

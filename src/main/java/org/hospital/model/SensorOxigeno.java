@@ -7,7 +7,7 @@ public class SensorOxigeno implements Calibrable {
 
     public int ReportarOxigenacion() {
         Random oxigenoRandom = new Random();
-        oxigenacion = 90 + oxigenoRandom.nextInt() * (100 - 90);
+        oxigenacion = oxigenoRandom.nextInt(11) + 90;
         return oxigenacion;
     }
 

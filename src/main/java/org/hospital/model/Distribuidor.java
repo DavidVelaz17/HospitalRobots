@@ -5,17 +5,16 @@ public class Distribuidor extends Robot {
     private String medicamento;
 
     public String EntregarMedicamento() {
+        medicamento = "Penicilina";
         int posicion = sensorProximidad.ReportarPosicion();
         if (posicion == 10) {
-            return Entregado() + "";
+            return Entregado() + "Se entregó exitosamente: " + medicamento;
         } else {
             return "Entrega fallida";
         }
     }
 
     public boolean Entregado() {
-        medicamento = "Penicilina";
-        System.out.println("Se entregó exitosamente: " + medicamento);
         return true;
     }
 

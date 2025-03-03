@@ -1,13 +1,16 @@
 package org.hospital.model;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 public class Cirujano extends Robot {
     private SensorOxigeno sensorOxigeno = new SensorOxigeno();
     private String nombreCirujano;
     private Date fecha;
 
-    public void CirugiaAsistida() {
+    public String CirugiaAsistida() {
         int oxigeno = sensorOxigeno.ReportarOxigenacion();
         fecha = new Date();
         String mensajeOxigenación =
@@ -21,6 +24,15 @@ public class Cirujano extends Robot {
         System.out.println(mensajeOxigenación);
         System.out.println(Exitoso() ? "Operación Exitosa" : "Operación Fallida");
 
+        return "Inicia cirugía asistida\nDoctor(a) asignado(a) " +
+                CirujanoAsignado() + "\nFecha: " + fecha;
+
+    }
+
+    public String MostrarSensorOxigeno() {
+        int oxigenacion = sensorOxigeno.ReportarOxigenacion();
+        return sensorOxigeno.IniciarCalibracion() + "\n" +
+                sensorOxigeno.FinalizarCalibracion() + "\nNivel de oxigenación actual: " + oxigenacion + " %";
     }
 
     public boolean Exitoso() {
@@ -44,26 +56,25 @@ public class Cirujano extends Robot {
     public class BypassCoronario extends Cirujano {
         private int numeroBypass;
 
-        public boolean RealizarAnastomosis() {
+        public String RealizarAnastomosis() {
             numeroBypass = new Random().nextInt(10);
-            System.out.println("Robot asistente de bypass coronario: " + numeroBypass
-                    + "\nInicia anastomosis");
-            return true;
+            return "Robot asistente de bypass coronario: " + numeroBypass
+                    + "\nInicia anastomosis";
         }
     }
 
     public class ReparacionDeValvulaMitral extends Cirujano {
         private float anchuraDeValvulaMitral;
 
-        public void ReparacionDeValvulaMitral() {
+        public String ReparacionDeValvulaMitral() {
             anchuraDeValvulaMitral = new Random().nextFloat(2F);
-            System.out.println("Robot asistente de reparación " +
-                    "de valvula mitral inicia reparación de valvula mitral");
+            return "Robot asistente de reparación " +
+                    "de valvula mitral inicia reparación de valvula mitral";
         }
 
-        public void ReparacionDeEstenosis() {
-            System.out.println("Robot asistente de reparación" +
-                    " de valvula mitral inicia reparación de estenosis");
+        public String ReparacionDeEstenosis() {
+            return "Robot asistente de reparación" +
+                    " de valvula mitral inicia reparación de estenosis";
         }
     }
 
@@ -71,12 +82,13 @@ public class Cirujano extends Robot {
         private String tipo;
         private float tamaño;
 
-        public void ExtraccionDeCancer() {
+        public String ExtraccionDeCancer() {
             List<String> tipos = Arrays.asList("cerebral", "tejido blando", "cáncer de mama", "óseo", "piel");
             tamaño = new Random().nextFloat(2F);
             tipo = tipos.get(new Random().nextInt(tipos.size()));
-            System.out.println("Robot asistende de tumorectomia" +
-                    "inicia extracción de cancer de " + tipo + " de tamaño " + tamaño);
+            return "Robot asistende de tumorectomia" +
+                    "inicia extracción de cancer de " + tipo + " de tamaño " + tamaño;
+
         }
     }
 }

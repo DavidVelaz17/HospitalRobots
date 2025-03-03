@@ -1,6 +1,5 @@
 package org.hospital.model;
 
-
 import java.util.Random;
 
 public class SensorTemperatura implements Calibrable {

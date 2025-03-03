@@ -1,15 +1,16 @@
 package org.hospital.model;
 
+import java.util.Random;
+
 public class Robot {
     private int numeroDeSerie;
 
-
     public String Activar(String robot) {
-        return robot + ": Activado" + numeroDeSerie;
+        return robot + " Activado";
     }
 
     public String Desactivar(String robot) {
-        return robot + ": Desactivado" + numeroDeSerie;
+        return robot + " Desactivado";
     }
 
     public void setNumeroDeSerie(int numeroDeSerie) {
@@ -17,6 +18,7 @@ public class Robot {
     }
 
     public int getNumeroDeSerie() {
-        return numeroDeSerie;
+        Random random = new Random();
+        return 100000 + random.nextInt(900000);
     }
 }
