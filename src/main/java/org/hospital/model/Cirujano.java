@@ -13,20 +13,26 @@ public class Cirujano extends Robot {
     public String CirugiaAsistida() {
         int oxigeno = sensorOxigeno.ReportarOxigenacion();
         fecha = new Date();
-        String mensajeOxigenación =
-                oxigeno <= 92 ?
-                        "Niveles de oxígeno muy bajos, aumentar los niveles de oxigenación" :
-                        oxigeno < 95 ?
-                                "Niveles de oxígeno bajos, aumentar los niveles de oxigenación" :
-                                "Niveles óptimos de oxígeno";
-        System.out.println("Inicia cirugía asistida\nDoctor(a) asignado(a) " +
-                CirujanoAsignado() + "\nFecha: " + fecha);
-        System.out.println(mensajeOxigenación);
-        System.out.println(Exitoso() ? "Operación Exitosa" : "Operación Fallida");
 
-        return "Inicia cirugía asistida\nDoctor(a) asignado(a) " +
-                CirujanoAsignado() + "\nFecha: " + fecha;
+        String mensajeOxigenacion = (oxigeno <= 92)
+                ? "Niveles de oxígeno muy bajos, aumentar los niveles de oxigenación."
+                : (oxigeno < 95)
+                ? "Niveles de oxígeno bajos, aumentar los niveles de oxigenación."
+                : "Niveles óptimos de oxígeno.";
 
+        String resultadoOperacion = Exitoso() ? "Operación Exitosa." : "Operación Fallida.";
+
+        return String.format(
+                "=== Cirugía Asistida ===\n" +
+                        "Doctor(a) asignado(a): %s\n" +
+                        "Fecha: %s\n" +
+                        "Estado de oxigenación: %s\n" +
+                        "Resultado: %s",
+                CirujanoAsignado(),
+                fecha,
+                mensajeOxigenacion,
+                resultadoOperacion
+        );
     }
 
     public String MostrarSensorOxigeno() {
