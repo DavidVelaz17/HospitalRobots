@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.hospital.NewAppUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.hospital.controller.NewAppUI">
   <grid id="27dc6" binding="NewAppUIPanel" layout-manager="FormLayout">
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:10dlu:noGrow"/>
@@ -8,6 +8,8 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:131px:noGrow"/>
     <rowspec value="top:10dlu:noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
@@ -150,7 +152,7 @@
       </component>
       <scrollpane id="262fc">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties/>
@@ -164,11 +166,20 @@
       </scrollpane>
       <component id="27908" class="javax.swing.JLabel">
         <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
           <text value="Estado del robot:"/>
+        </properties>
+      </component>
+      <component id="9be90" class="javax.swing.JComboBox" binding="accionesByCirujano">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <model/>
         </properties>
       </component>
     </children>
