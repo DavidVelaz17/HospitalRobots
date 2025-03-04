@@ -9,6 +9,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que representa la interfaz de usuario para la aplicación del hospital.
+ * Esta clase permite seleccionar y controlar distintos tipos de robots (Diagnóstico, Cirujano y Distribuidor).
+ * Los usuarios pueden activar y desactivar robots, ejecutar funciones específicas, y mostrar la información de los sensores de cada robot.
+ */
 public class NewAppUI {
     private JPanel NewAppUIPanel;
     private JComboBox<String> selectRobot;
@@ -34,6 +39,11 @@ public class NewAppUI {
             valvulaMitral = cirujano.new ReparacionDeValvulaMitral();
 
 
+    /**
+     * Constructor de la clase NewAppUI.
+     * Inicializa los componentes de la interfaz gráfica, configura los botones y las acciones asociadas,
+     * y prepara la interfaz para interactuar con los robots.
+     */
     public NewAppUI() {
         // Deshabilitar los botones al inicio
         btnEjecutarFuncion.setEnabled(false);
@@ -50,8 +60,17 @@ public class NewAppUI {
         accionesByCirujano.addItem("Reparacion De Estenosis");
         accionesByCirujano.addItem("Extracción De Cancer");
 
-
         btnActivar.addActionListener(new ActionListener() {
+            /**
+             * Acción del botón "Activar".
+             * <p>
+             * Este método se ejecuta cuando el botón "Activar" es presionado. Dependiendo del robot seleccionado,
+             * activa el robot correspondiente (Diagnóstico, Cirujano o Distribuidor) y deshabilita el botón de activar,
+             * mientras habilita los botones de ejecutar función, mostrar sensor y desactivar.
+             * </p>
+             *
+             * @param e el evento que activa esta acción
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String robot = (String) selectRobot.getSelectedItem();
@@ -79,6 +98,16 @@ public class NewAppUI {
         });
 
         btnDesactivar.addActionListener(new ActionListener() {
+            /**
+             * Acción del botón "Desactivar".
+             * <p>
+             * Este método se ejecuta cuando el botón "Desactivar" es presionado. Dependiendo del robot seleccionado,
+             * desactiva el robot correspondiente (Diagnóstico, Cirujano o Distribuidor) y deshabilita los botones de función y sensor,
+             * habilitando de nuevo el botón de activar.
+             * </p>
+             *
+             * @param e el evento que activa esta acción
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String robot = (String) selectRobot.getSelectedItem();
@@ -106,6 +135,15 @@ public class NewAppUI {
         });
 
         btnEjecutarFuncion.addActionListener(new ActionListener() {
+            /**
+             * Acción del botón "Ejecutar Función".
+             * <p>
+             * Este método se ejecuta cuando el botón "Ejecutar Función" es presionado. Dependiendo del robot seleccionado,
+             * ejecuta una acción específica (análisis clínico, cirugía asistida o entrega de medicamento).
+             * </p>
+             *
+             * @param e el evento que activa esta acción
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String robot = (String) selectRobot.getSelectedItem();
@@ -131,6 +169,15 @@ public class NewAppUI {
         });
 
         btnMostrarSensor.addActionListener(new ActionListener() {
+            /**
+             * Acción del botón "Mostrar Sensor".
+             * <p>
+             * Este método se ejecuta cuando el botón "Mostrar Sensor" es presionado. Dependiendo del robot seleccionado,
+             * muestra la información del sensor correspondiente (temperatura, oxígeno o proximidad).
+             * </p>
+             *
+             * @param e el evento que activa esta acción
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String robot = (String) selectRobot.getSelectedItem();
@@ -154,9 +201,10 @@ public class NewAppUI {
 
         selectRobot.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * Maneja la acción cuando un robot es seleccionado desde el JComboBox.
+             * Se ocultan las acciones específicas para el robot Cirujano y se habilitan/deshabilitan botones.
              *
-             * @param e the event to be processed
+             * @param e el evento de acción
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -172,9 +220,10 @@ public class NewAppUI {
 
         accionesByCirujano.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * Maneja la acción cuando una acción específica del cirujano es seleccionada.
+             * Se realiza un downcasting para acceder a los métodos específicos de cada subclase de Cirujano.
              *
-             * @param e the event to be processed
+             * @param e el evento de acción
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -209,6 +258,11 @@ public class NewAppUI {
         });
     }
 
+    /**
+     * Exporta el panel de la interfaz de usuario.
+     *
+     * @return El panel principal de la interfaz de usuario.
+     */
     public JPanel UIPanelExport() {
         return NewAppUIPanel;
     }

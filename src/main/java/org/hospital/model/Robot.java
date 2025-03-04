@@ -39,7 +39,7 @@ public class Robot {
 
     /**
      * Obtiene el número de serie del robot.
-     * <p>Nota: Este método genera un número aleatorio en lugar de devolver el número de serie almacenado.</p>
+     * <strong>Nota: Este método genera un número aleatorio en lugar de devolver el número de serie almacenado.</strong>
      *
      * @return Un número de serie aleatorio de 6 dígitos.
      */
