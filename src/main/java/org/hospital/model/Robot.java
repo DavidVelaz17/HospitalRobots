@@ -44,7 +44,11 @@ public class Robot {
      * @return Un número de serie aleatorio de 6 dígitos.
      */
     public int getNumeroDeSerie() {
-        Random random = new Random();
-        return 100000 + random.nextInt(900000);
+        if (numeroDeSerie == 0) {
+            // Si el número de serie no ha sido establecido, generar un número aleatorio
+            Random random = new Random();
+            numeroDeSerie = 100000 + random.nextInt(900000);
+        }
+        return numeroDeSerie;
     }
 }
