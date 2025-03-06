@@ -1,6 +1,6 @@
 package org.hospital;
 
-import com.formdev.flatlaf.FlatDarculaLaf;
+//import com.formdev.flatlaf.FlatDarculaLaf;
 import org.hospital.controller.NewAppUI;
 
 import javax.swing.*;
@@ -11,10 +11,9 @@ import javax.swing.*;
  * Este es el punto de entrada de la aplicación. Configura la apariencia de la interfaz de usuario utilizando
  * el Look and Feel "FlatDarculaLaf", luego crea y muestra la ventana principal de la aplicación con un panel de
  * interfaz de usuario proporcionado por la clase {@link NewAppUI}.
+ *  @author [Cristofer A. Hernandez y David Gustavo Lara]
+ *  @version 1.
  * </p>
- *
- * @author [Cristofer A. Hernandez y David Gustavo Lara]
- * @version 1.0
  */
 public class Main {
     /**
@@ -26,11 +25,11 @@ public class Main {
      * </p>
      */
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(new FlatDarculaLaf());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            UIManager.setLookAndFeel(new FlatDarculaLaf());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Gestión de Robots Médicos Inteligentes");

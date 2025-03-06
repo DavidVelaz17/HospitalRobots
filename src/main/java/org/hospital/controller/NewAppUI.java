@@ -45,7 +45,6 @@ public class NewAppUI {
      * y prepara la interfaz para interactuar con los robots.
      */
     public NewAppUI() {
-        // Deshabilitar los botones al inicio
         btnEjecutarFuncion.setEnabled(false);
         btnMostrarSensor.setEnabled(false);
         btnDesactivar.setEnabled(false);
@@ -89,7 +88,6 @@ public class NewAppUI {
                 }
                 textAreaInfoRobot.append(accion + "\n");
 
-                // Habilitar botones de función y desactivar el de activar
                 btnEjecutarFuncion.setEnabled(true);
                 btnMostrarSensor.setEnabled(true);
                 btnDesactivar.setEnabled(true);
@@ -126,7 +124,6 @@ public class NewAppUI {
                 }
                 textAreaInfoRobot.append(accion + "\n");
 
-                // Deshabilitar botones de función y habilitar el de activar
                 btnEjecutarFuncion.setEnabled(false);
                 btnMostrarSensor.setEnabled(false);
                 btnDesactivar.setEnabled(false);
