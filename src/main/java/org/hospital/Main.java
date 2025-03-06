@@ -1,6 +1,6 @@
 package org.hospital;
 
-//import com.formdev.flatlaf.FlatDarculaLaf;
+import com.formdev.flatlaf.FlatDarculaLaf;
 import org.hospital.controller.NewAppUI;
 
 import javax.swing.*;
@@ -25,11 +25,11 @@ public class Main {
      * </p>
      */
     public static void main(String[] args) {
-//        try {
-//            UIManager.setLookAndFeel(new FlatDarculaLaf());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            UIManager.setLookAndFeel(new FlatDarculaLaf());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Gestión de Robots Médicos Inteligentes");
